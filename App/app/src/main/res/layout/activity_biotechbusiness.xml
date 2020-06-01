@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="32sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/black">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/holo_blue_bright">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Home"
+        android:textSize="32sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/holo_blue_dark">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        >
+
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowCount="4">
+
+            <Button
+                android:id="@+id/Corporate"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:layout_gravity="left|top"
+                android:text="@string/corporateFinance"
+                android:layout_margin="10dp"
+                android:onClick="highlight"/>
+
+            <Button
+                android:id="@+id/BioBus"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:layout_gravity="left|top"
+                android:text="@string/biobus"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:id="@+id/His"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:text="@string/history"
+                android:layout_margin="10dp"/>
+            <Button
+                android:id="@+id/Biomed"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:layout_gravity="left|top"
+                android:text="@string/biomed"
+                android:layout_margin="10dp"/>
+
+        </GridLayout>
+
+
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/startQuiz"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="navigateTo"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

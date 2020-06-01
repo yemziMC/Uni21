@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Uni21</string>
+    <string name="subtitle">21st Century Studying</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="Home">Home</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="TestYourself">Test Yourself</string>
+    <string name="VersusMode">Versus Mode</string>
+    <string name="ReviewQuestions">Review Questions</string>
+    <string name="ProgressMonitor">Progress Monitor</string>
+    <string name="GoPremium">Go Premium</string>
+    <string name="Settings">Settings</string>
+    <string name="biotech">M.Sc.Biotechnology</string>
+    <string name="biobus">B.Sc.Biotech and Business</string>
+    <string name="history">B.A History</string>
+    <string name="biomed">M.Sc.Biomedical Science</string>
+    <string name="corporateFinance">Corporate Finance</string>
+    <string name="startQuiz">Start Quiz !</string>
+
+</resources>
