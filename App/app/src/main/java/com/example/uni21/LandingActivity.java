@@ -16,7 +16,7 @@ public class LandingActivity extends AppCompatActivity {
     }
 
     public void navigateTo(View view){
-        Intent intent = new Intent(this, SelectCourseActivity.class);
+        Intent intent = new Intent(this, SelectModuleActivity.class);
         startActivity(intent);
         }
     }
