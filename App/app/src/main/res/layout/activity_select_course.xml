@@ -5,32 +5,60 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="32sp"
+    <GridLayout
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/black">
-    </TextView>
+        android:layout_marginTop="15dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:src="@drawable/icon">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="5dp"
+            android:text="Uni"
+            android:textColor="#464646"
+            android:textSize="45sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="21"
+            android:textColor="#5077c7"
+            android:textSize="45sp"
+            android:textStyle="bold">
+        </TextView>
+    </GridLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/subtitle"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/holo_blue_bright">
+        android:textColor="#6ccbc0">
     </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Home"
-        android:textSize="32sp"
+        android:text="Select Course"
+        android:textSize="40sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:textColor="@android:color/holo_blue_dark">
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-17dp"
+        android:textColor="#5d99f8">
     </TextView>
 
     <LinearLayout
@@ -38,48 +66,52 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
         android:layout_marginTop="30dp"
         >
 
         <GridLayout
             android:id="@+id/GridLayout1"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:columnCount="2"
             android:orientation="horizontal"
-            android:rowCount="4">
+            android:background="#ffffff"
+            android:rowCount="3">
 
-            <Button
-                android:id="@+id/Biotech"
-                android:layout_width="160dp"
-                android:layout_height="90dp"
-                android:layout_gravity="left|top"
-                android:text="@string/biotech"
-                android:layout_margin="10dp"
-                android:onClick="navigateTo"/>
+            <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="126dp"
+            android:layout_height="126dp"
+            android:layout_marginLeft="25dp"
+            android:background="#ffffff"
+            android:src="@drawable/biotech" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/BioBus"
-                android:layout_width="160dp"
-                android:layout_height="90dp"
-                android:layout_gravity="left|top"
-                android:text="@string/biobus"
-                android:layout_margin="10dp" />
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                android:layout_marginLeft="0dp"
+                android:background="#ffffff"
+                android:onClick="navigateTo"
+                android:src="@drawable/biotech_bus"/>
 
-            <Button
-                android:id="@+id/His"
-                android:layout_width="160dp"
-                android:layout_height="90dp"
-                android:text="@string/history"
-                android:layout_margin="10dp"/>
-            <Button
-                android:id="@+id/Biomed"
-                android:layout_width="160dp"
-                android:layout_height="90dp"
-                android:layout_gravity="left|top"
-                android:text="@string/biomed"
-                android:layout_margin="10dp"/>
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                android:src="@drawable/history"
+                android:layout_marginLeft="25dp"
+                android:background="#ffffff"/>
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                android:src="@drawable/biomedical"
+                android:layout_marginLeft="0dp"
+                android:background="#ffffff"/>
 
         </GridLayout>
 
