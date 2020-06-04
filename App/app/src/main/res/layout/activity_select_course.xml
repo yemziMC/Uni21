@@ -1,65 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <GridLayout
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:background="#ffffff">
-
-        <ImageView
-            android:layout_width="60dp"
-            android:src="@drawable/icon">
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="1"
+        android:layout_gravity="center_horizontal" >
+        <GridLayout
+            android:layout_width="180dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="5dp"
-            android:text="Uni"
-            android:textColor="#464646"
-            android:textSize="45sp"
-            android:textStyle="bold"></TextView>
+            android:layout_marginTop="15dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:src="@drawable/icon"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/uni"
+                android:textColor="#464646"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                android:layout_marginStart="7dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/_21"
+                android:textColor="#5077c7"
+                android:textSize="45sp"
+                android:textStyle="bold">
+            </TextView>
+        </GridLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="21"
-            android:textColor="#5077c7"
-            android:textSize="45sp"
-            android:textStyle="bold">
+            android:text="@string/subtitle"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#6ccbc0">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_course"
+            android:textSize="35sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textColor="#5d99f8">
         </TextView>
     </GridLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/subtitle"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#6ccbc0">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Course"
-        android:textSize="40sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="-17dp"
-        android:textColor="#5d99f8">
-    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,51 +74,54 @@
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
         android:background="#ffffff"
-        android:layout_marginTop="30dp"
-        >
+        android:layout_marginTop="20dp">
 
         <GridLayout
             android:id="@+id/GridLayout1"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:columnCount="2"
-            android:orientation="horizontal"
-            android:background="#ffffff"
-            android:rowCount="3">
+            android:background="#ffffff">
 
-            <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="126dp"
-            android:layout_height="126dp"
-            android:layout_marginLeft="25dp"
-            android:background="#ffffff"
-            android:src="@drawable/biotech" />
-
-            <ImageButton
-                android:id="@+id/BioBus"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:layout_marginLeft="0dp"
-                android:background="#ffffff"
+            <Button
+                android:id="@+id/imageButton1"
                 android:onClick="navigateTo"
-                android:src="@drawable/biotech_bus"/>
+                android:background="@drawable/button_layout"
+                android:text="@string/biotech"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textAllCaps="false" />
 
-            <ImageButton
+            <Button
+                android:id="@+id/BioBus"
+                android:background="@drawable/button_layout"
+                android:text="@string/biobus"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-10dp" />
+
+            <Button
                 android:id="@+id/imageButton3"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:src="@drawable/history"
-                android:layout_marginLeft="25dp"
-                android:background="#ffffff"/>
+                android:background="@drawable/button_layout"
+                android:text="@string/review_nquestions"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"/>
 
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:src="@drawable/biomedical"
-                android:layout_marginLeft="0dp"
-                android:background="#ffffff"/>
+            <Button
+                android:background="@drawable/button_layout"
+                android:text="@string/progress_nmonitor"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
 
         </GridLayout>
 

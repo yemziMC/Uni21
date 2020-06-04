@@ -14,10 +14,12 @@ public class biotechbusiness extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biotechbusiness);
     }
-    public void highlight(View view){
-        Button btn = (Button) findViewById(R.id.Corporate);
-        btn.setBackgroundResource(R.color.red);
+
+    public void highlight(View view) {
+        Button btn = ((Button) findViewById(R.id.Corporate));
+        btn.setBackgroundResource(R.drawable.button_pressed_layout);
     }
+
     public void navigateTo(View view){
         Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);

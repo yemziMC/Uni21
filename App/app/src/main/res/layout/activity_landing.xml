@@ -6,60 +6,66 @@
     android:orientation="vertical">
 
     <GridLayout
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:background="#ffffff">
-
-        <ImageView
-            android:layout_width="60dp"
-            android:src="@drawable/icon">
-        </ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="1"
+        android:layout_gravity="center_horizontal" >
+        <GridLayout
+            android:layout_width="180dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="5dp"
-            android:text="Uni"
-            android:textColor="#464646"
-            android:textSize="45sp"
-            android:textStyle="bold"></TextView>
+            android:layout_marginTop="15dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:src="@drawable/icon"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/uni"
+                android:textColor="#464646"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                android:layout_marginStart="7dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/_21"
+                android:textColor="#5077c7"
+                android:textSize="45sp"
+                android:textStyle="bold">
+            </TextView>
+        </GridLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="21"
-            android:textColor="#5077c7"
-            android:textSize="45sp"
-            android:textStyle="bold">
+            android:text="@string/subtitle"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#6ccbc0">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Home"
+            android:textSize="35sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textColor="#5d99f8">
         </TextView>
     </GridLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/subtitle"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#6ccbc0">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Home"
-        android:textSize="40sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="-17dp"
-        android:textColor="#5d99f8">
-    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,12 +73,12 @@
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
         android:background="#ffffff"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         >
 
         <GridLayout
             android:id="@+id/GridLayout1"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:columnCount="2"
@@ -80,59 +86,84 @@
             android:background="#ffffff"
             android:rowCount="3">
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton1"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:layout_marginLeft="25dp"
-                android:background="#ffffff"
                 android:onClick="navigateTo"
-                android:src="@drawable/test_yourself_button" />
+                android:background="@drawable/button_layout"
+                android:text="@string/test_yourself"
+                android:textSize="16sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center_horizontal"
+                android:drawableBottom="@drawable/test_yourself_icon"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton2"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:layout_marginLeft="0dp"
-                android:background="#ffffff"
-                android:src="@drawable/versus_mode_button"
-                android:text="@string/VersusMode" />
+                android:background="@drawable/button_layout"
+                android:text="@string/versus_mode"
+                android:textSize="16sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableBottom="@drawable/versus_mode_icon"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton3"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:src="@drawable/review_questions_button"
-                android:layout_marginLeft="25dp"
-                android:background="#ffffff"/>
+                android:background="@drawable/button_layout"
+                android:text="@string/review_nquestions"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="12dp"
+                android:textAllCaps="false"
+                android:gravity="top|center"
+                android:drawableBottom="@drawable/review_questions_icon"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton4"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:src="@drawable/progress_monitor_button"
-                android:layout_marginLeft="0dp"
-                android:background="#ffffff"/>
+                android:background="@drawable/button_layout"
+                android:text="@string/progress_nmonitor"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableBottom="@drawable/progress_monitor_icon"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton5"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:src="@drawable/go_premium_button"
-                android:layout_marginLeft="25dp"
-                android:background="#ffffff"/>
+                android:background="@drawable/button_layout"
+                android:text="@string/GoPremium"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center"
+                android:drawableBottom="@drawable/go_premium_icon"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/imageButton6"
-                android:layout_width="126dp"
-                android:layout_height="126dp"
-                android:src="@drawable/settings_button"
-                android:layout_marginLeft="0dp"
-                android:background="#ffffff"/>
+                android:background="@drawable/button_layout"
+                android:text="@string/settings"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableBottom="@drawable/settings_icon"/>
         </GridLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
 
-
+</LinearLayout>
