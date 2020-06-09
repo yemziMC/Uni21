@@ -1,55 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_light_background"
-    android:padding="16dp"
-    tools:context="com.example.uni21.StartingScreenActivity">
+    android:orientation="vertical"
+    android:background="#ffffff">
 
-    <TextView
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Quiz"
-        android:textColor="@android:color/black"
-        android:textSize="35sp" />
+        android:columnCount="1"
+        android:layout_gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/text_view_highscore"
-        android:layout_width="wrap_content"
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="3"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/uni"
+                android:textColor="#464646"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                android:layout_marginStart="7dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/_21"
+                android:textColor="#5077c7"
+                android:textSize="45sp"
+                android:textStyle="bold">
+            </TextView>
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#6ccbc0">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_lecture_material"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+        </TextView>
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/button_start_quiz"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:text="Highscore: 0"
-        android:textSize="20sp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_start_quiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Start Quiz" />
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowCount="2"
+            tools:ignore="UselessParent">
 
-    <Spinner
-        android:id="@+id/spinner_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button_start_quiz"
-        android:layout_below="@+id/button_start_quiz"
-        android:layout_marginTop="16dp"
-        android:layout_alignLeft="@+id/button_start_quiz" />
+            <Button
+                android:id="@+id/Corporate"
+                android:onClick="highlightCorpFinance"
+                android:background="@drawable/button_layout"
+                android:text="@string/corporate_nfinance"
+                android:textSize="16sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center_horizontal"
+                android:drawableBottom="@drawable/corporate_finance_progress_bar"/>
 
-    <Spinner
-        android:id="@+id/spinner_difficulty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button_start_quiz"
-        android:layout_below="@+id/spinner_category"
-        android:layout_marginTop="16dp"
-        android:layout_alignLeft="@+id/button_start_quiz" />
+            <Button
+                android:id="@+id/reg_affairs"
+                android:onClick="highlightRegAffairs"
+                android:background="@drawable/button_layout"
+                android:text="@string/regulatory_affairs"
+                android:textSize="16sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableBottom="@drawable/regulatorry_affairs_progress_bar"/>
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/food_bio"
+                android:onClick="highlightFoodBiotech"
+                android:background="@drawable/button_layout"
+                android:text="@string/food_biotechnology"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="12dp"
+                android:textAllCaps="false"
+                android:gravity="top|center"
+                android:drawableBottom="@drawable/food_biotech_progress_bar"/>
+
+            <Button
+                android:id="@+id/coop_strategy"
+                android:onClick="highlightCorpStrategy"
+                android:background="@drawable/button_layout"
+                android:text="@string/corporate_strategy"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="15dp"
+                android:textAllCaps="false"
+                android:gravity="top|center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableBottom="@drawable/corporate_strategy_progress_bar"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            tools:context="com.example.uni21.StartingScreenActivity">
+
+            <TextView
+                android:id="@+id/text_view_highscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/button_start_quiz"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="32dp"
+                android:text="@string/highscore_0"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button_start_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/start_quiz" />
+
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button_start_quiz"
+                android:layout_marginTop="16dp" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

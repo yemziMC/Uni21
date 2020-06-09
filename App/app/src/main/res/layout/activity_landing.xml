@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffffff">
 
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="1"
-        android:layout_gravity="center_horizontal" >
+        android:layout_gravity="center_horizontal">
+
         <GridLayout
-            android:layout_width="180dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
             android:columnCount="3"
-            android:orientation="horizontal"
-            android:background="#ffffff">
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/icon"
                 android:contentDescription="@string/todo" />
 
@@ -72,7 +74,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
-        android:background="#ffffff"
         android:layout_marginTop="20dp"
         >
 
@@ -83,8 +84,8 @@
             android:layout_gravity="center_horizontal"
             android:columnCount="2"
             android:orientation="horizontal"
-            android:background="#ffffff"
-            android:rowCount="3">
+            android:rowCount="3"
+            tools:ignore="UselessParent">
 
             <Button
                 android:id="@+id/imageButton1"
@@ -167,8 +168,4 @@
     </LinearLayout>
 
 </LinearLayout>
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 19b897c76eb464c0bbbbbfbeed743100e538ed00

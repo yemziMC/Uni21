@@ -64,13 +64,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
     private void fillCategoriesTable() {
-        Category c1 = new Category("Programming");
+        Category c1 = new Category("Corporate Finance");
         insertCategory(c1);
-        Category c2 = new Category("Geography");
+        Category c2 = new Category("Regulatory Affairs");
         insertCategory(c2);
-        Category c3 = new Category("Math");
+        Category c3 = new Category("Food Biotechnology");
         insertCategory(c3);
+        //Category c4 = new Category("Corporate Strategy");
+        //insertCategory(c4);
     }
+
     public void addCategory(Category category) {
         db = getWritableDatabase();
         insertCategory(category);
@@ -81,6 +84,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
             insertCategory(category);
         }
     }
+
     private void insertCategory(Category category) {
         ContentValues cv = new ContentValues();
         cv.put(CategoriesTable.COLUMN_NAME, category.getName());
@@ -112,6 +116,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 Question.DIFFICULTY_MEDIUM, 5);
         insertQuestion(q6);
     }
+
     public void addQuestion(Question question) {
         db = getWritableDatabase();
         insertQuestion(question);
@@ -122,6 +127,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
             insertQuestion(question);
         }
     }
+
     private void insertQuestion(Question question) {
         ContentValues cv = new ContentValues();
         cv.put(QuestionsTable.COLUMN_QUESTION, question.getQuestion());
@@ -148,6 +154,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         c.close();
         return categoryList;
     }
+
     public ArrayList<Question> getAllQuestions() {
         ArrayList<Question> questionList = new ArrayList<>();
         db = getReadableDatabase();
@@ -169,6 +176,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         c.close();
         return questionList;
     }
+
     public ArrayList<Question> getQuestions(int categoryID, String difficulty) {
         ArrayList<Question> questionList = new ArrayList<>();
         db = getReadableDatabase();

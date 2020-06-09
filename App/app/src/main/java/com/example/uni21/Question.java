@@ -108,6 +108,7 @@ public class Question implements Parcelable {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
+
     public static String[] getAllDifficultyLevels() {
         return new String[]{
                 DIFFICULTY_EASY,

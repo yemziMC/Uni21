@@ -35,6 +35,13 @@ public class StartingScreenActivity extends AppCompatActivity {
     private Spinner spinnerCategory;
     private Spinner spinnerDifficulty;
 
+    //Values used to determine if any of the 4 buttons has been pressed
+    public boolean clickedCorpFinance = false;
+    public boolean clickedRegAffairs = false;
+    public boolean clickedFoodBiotech = false;
+    public boolean clickedCorpStrategy = false;
+
+
     private int highscore;
 
     @Override
@@ -44,10 +51,10 @@ public class StartingScreenActivity extends AppCompatActivity {
 
         textViewHighscore = findViewById(R.id.text_view_highscore);
         spinnerCategory = findViewById(R.id.spinner_category);
-        spinnerDifficulty = findViewById(R.id.spinner_difficulty);
+        //spinnerDifficulty = findViewById(R.id.spinner_difficulty);
 
         loadCategories();
-        loadDifficultyLevels();
+        //loadDifficultyLevels();
         loadHighscore();
 
         Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
@@ -59,6 +66,81 @@ public class StartingScreenActivity extends AppCompatActivity {
         });
     }
 
+    //Highlights the Corp Finance button, sets it to true and unsets all other buttons
+    public void highlightCorpFinance(View view) {
+        clickedCorpFinance = !clickedCorpFinance;
+        clickedFoodBiotech = false;
+        clickedRegAffairs = false;
+        clickedCorpStrategy = false;
+        Button btn1 = ((Button) findViewById(R.id.Corporate));
+        Button btn2 = ((Button) findViewById(R.id.reg_affairs));
+        Button btn3 = ((Button) findViewById(R.id.food_bio));
+        Button btn4 = ((Button) findViewById(R.id.coop_strategy));
+
+        if(clickedCorpFinance) {
+            btn1.setBackgroundResource(R.drawable.button_pressed_layout);
+            btn2.setBackgroundResource(R.drawable.button_layout);
+            btn3.setBackgroundResource(R.drawable.button_layout);
+            btn4.setBackgroundResource(R.drawable.button_layout);
+        }
+    }
+
+    //Highlights the Reg Affairs button, sets it to true and unsets all other buttons
+    public void highlightRegAffairs(View view) {
+        clickedRegAffairs = !clickedRegAffairs;
+        clickedFoodBiotech = false;
+        clickedCorpFinance = false;
+        clickedCorpStrategy = false;
+        Button btn1 = ((Button) findViewById(R.id.Corporate));
+        Button btn2 = ((Button) findViewById(R.id.reg_affairs));
+        Button btn3 = ((Button) findViewById(R.id.food_bio));
+        Button btn4 = ((Button) findViewById(R.id.coop_strategy));
+        if(clickedRegAffairs) {
+            btn1.setBackgroundResource(R.drawable.button_layout);
+            btn2.setBackgroundResource(R.drawable.button_pressed_layout);
+            btn3.setBackgroundResource(R.drawable.button_layout);
+            btn4.setBackgroundResource(R.drawable.button_layout);
+        }
+    }
+
+    //Highlights the Food Biotech button, sets it to true and unsets all other buttons
+    public void highlightFoodBiotech(View view) {
+        clickedFoodBiotech = !clickedFoodBiotech;
+        clickedRegAffairs = false;
+        clickedCorpFinance = false;
+        clickedCorpStrategy = false;
+        Button btn1 = ((Button) findViewById(R.id.Corporate));
+        Button btn2 = ((Button) findViewById(R.id.reg_affairs));
+        Button btn3 = ((Button) findViewById(R.id.food_bio));
+        Button btn4 = ((Button) findViewById(R.id.coop_strategy));
+        if(clickedFoodBiotech) {
+            btn1.setBackgroundResource(R.drawable.button_layout);
+            btn2.setBackgroundResource(R.drawable.button_layout);
+            btn3.setBackgroundResource(R.drawable.button_pressed_layout);
+            btn4.setBackgroundResource(R.drawable.button_layout);
+        }
+    }
+
+    //Highlights the Corp Strategy button, sets it to true and unsets all other buttons
+    public void highlightCorpStrategy(View view) {
+        clickedCorpStrategy = !clickedCorpStrategy;
+        clickedRegAffairs = false;
+        clickedCorpFinance = false;
+        clickedFoodBiotech = false;
+        Button btn1 = ((Button) findViewById(R.id.Corporate));
+        Button btn2 = ((Button) findViewById(R.id.reg_affairs));
+        Button btn3 = ((Button) findViewById(R.id.food_bio));
+        Button btn4 = ((Button) findViewById(R.id.coop_strategy));
+        if(clickedCorpStrategy) {
+            btn1.setBackgroundResource(R.drawable.button_layout);
+            btn2.setBackgroundResource(R.drawable.button_layout);
+            btn3.setBackgroundResource(R.drawable.button_layout);
+            btn4.setBackgroundResource(R.drawable.button_pressed_layout);
+        }
+    }
+
+    //Starts the quiz
+    //It takes values of the category and difficulty
     private void startQuiz() {
         Category selectedCategory = (Category) spinnerCategory.getSelectedItem();
         int categoryID = selectedCategory.getId();

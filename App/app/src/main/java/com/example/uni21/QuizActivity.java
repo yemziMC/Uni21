@@ -2,6 +2,7 @@ package com.example.uni21;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -11,7 +12,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.View;
@@ -49,6 +49,7 @@ public class QuizActivity extends AppCompatActivity {
     private int score;
     private boolean answered;
     private long backPressedTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +81,7 @@ public class QuizActivity extends AppCompatActivity {
             showNextQuestion();
         } else {
             questionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
+            assert questionList != null;
             questionCountTotal = questionList.size();
             questionCounter = savedInstanceState.getInt(KEY_QUESTION_COUNT);
             currentQuestion = questionList.get(questionCounter - 1);
@@ -108,6 +110,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
     }
+
     private void showNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
@@ -155,6 +158,7 @@ public class QuizActivity extends AppCompatActivity {
             textViewCountDown.setTextColor(textColorDefaultCd);
         }
     }
+
     private void checkAnswer() {
         answered = true;
         countDownTimer.cancel();
@@ -166,6 +170,7 @@ public class QuizActivity extends AppCompatActivity {
         }
         showSolution();
     }
+
     private void showSolution() {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
