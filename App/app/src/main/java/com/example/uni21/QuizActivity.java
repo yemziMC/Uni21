@@ -57,7 +57,7 @@ public class QuizActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.text_view_score);
         textViewQuestionCount = findViewById(R.id.text_view_question_count);
         textViewCategory = findViewById(R.id.text_view_category);
-        textViewDifficulty = findViewById(R.id.text_view_difficulty);
+//        textViewDifficulty = findViewById(R.id.text_view_difficulty);
         textViewCountDown = findViewById(R.id.text_view_countdown);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button1);
@@ -71,7 +71,7 @@ public class QuizActivity extends AppCompatActivity {
         String categoryName = intent.getStringExtra(StartingScreenActivity.EXTRA_CATEGORY_NAME);
         String difficulty = intent.getStringExtra(StartingScreenActivity.EXTRA_DIFFICULTY);
         textViewCategory.setText("Category: " + categoryName);
-        textViewDifficulty.setText("Difficulty: " + difficulty);
+//        textViewDifficulty.setText("Difficulty: " + difficulty);
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
             questionList = dbHelper.getQuestions(categoryID, difficulty);
