@@ -1,7 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -150,7 +149,7 @@
             android:layout_above="@id/button_start_quiz"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
-            android:text="Highscore: 0"
+            android:text="@string/highscore_0"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/button_start_quiz"
             app:layout_constraintEnd_toEndOf="parent"

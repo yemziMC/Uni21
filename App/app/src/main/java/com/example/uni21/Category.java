@@ -1,9 +1,9 @@
 package com.example.uni21;
 
 public class Category {
-    public static final int PROGRAMMING = 1;
-    public static final int GEOGRAPHY = 2;
-    public static final int MATH = 3;
+    public static final int CORP_FIN = 1;
+    public static final int REG_AFFAIRS = 2;
+    public static final int FOOD_BIOTECH = 3;
 
     private int id;
     private String name;

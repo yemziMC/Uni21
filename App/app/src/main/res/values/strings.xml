@@ -37,5 +37,10 @@
     <string name="regulatory_affairs">Regulatory\nAffairs</string>
     <string name="corporate_strategy">Corporate\nStrategy</string>
     <string name="food_biotechnology">Food\nBiotechnology</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="highscore_0">Highscore: 0</string>
+    <string name="question_text">Here will be the question text\nHere will be the question text\nHere will be the question text</string>
+    <string name="score_0">Score: 0</string>
+    <string name="question_1_x">Question: 1/x</string>
 
 </resources>
