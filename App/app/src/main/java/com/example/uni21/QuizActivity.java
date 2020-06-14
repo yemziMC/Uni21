@@ -2,7 +2,6 @@ package com.example.uni21;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -31,7 +30,6 @@ public class QuizActivity extends AppCompatActivity {
     private TextView textViewScore;
     private TextView textViewQuestionCount;
     private TextView textViewCategory;
-    private TextView textViewDifficulty;
     private TextView textViewCountDown;
     private RadioGroup rbGroup;
     private RadioButton rb1;
@@ -58,7 +56,6 @@ public class QuizActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.text_view_score);
         textViewQuestionCount = findViewById(R.id.text_view_question_count);
         textViewCategory = findViewById(R.id.text_view_category);
-        textViewDifficulty = findViewById(R.id.text_view_difficulty);
         textViewCountDown = findViewById(R.id.text_view_countdown);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button1);
@@ -70,12 +67,10 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int categoryID = intent.getIntExtra(StartingScreenActivity.EXTRA_CATEGORY_ID, 0);
         String categoryName = intent.getStringExtra(StartingScreenActivity.EXTRA_CATEGORY_NAME);
-        String difficulty = intent.getStringExtra(StartingScreenActivity.EXTRA_DIFFICULTY);
         textViewCategory.setText("Category: " + categoryName);
-        textViewDifficulty.setText("Difficulty: " + difficulty);
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
-            questionList = dbHelper.getQuestions(categoryID, difficulty);
+            questionList = dbHelper.getQuestions(categoryID);
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
             showNextQuestion();

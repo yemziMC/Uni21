@@ -157,7 +157,6 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@id/button_start_quiz"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="32dp"
                 android:text="@string/highscore_0"
                 android:textSize="20sp" />
 
@@ -168,12 +167,6 @@
                 android:layout_centerInParent="true"
                 android:text="@string/start_quiz" />
 
-            <Spinner
-                android:id="@+id/spinner_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/button_start_quiz"
-                android:layout_marginTop="16dp" />
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
