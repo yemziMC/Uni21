@@ -91,23 +91,23 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        Question q1 = new Question("First question text",
-                "A", "B", "C", 1, Category.CORP_FIN);
+        Question q1 = new Question("First Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.CORP_FIN);
         insertQuestion(q1);
-        Question q2 = new Question("Second question text",
-                "A", "B", "C", 2, Category.REG_AFFAIRS);
+        Question q2 = new Question("Second Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.CORP_FIN);
         insertQuestion(q2);
-        Question q3 = new Question("Third question text",
-                "A", "B", "C", 3, Category.FOOD_BIOTECH);
+        Question q3 = new Question("Third Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 3, Category.CORP_FIN);
         insertQuestion(q3);
-        Question q4 = new Question("Fourth question text",
-                "A", "B", "C", 1, Category.FOOD_BIOTECH);
+        Question q4 = new Question("Fourth Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.CORP_FIN);
         insertQuestion(q4);
-        Question q5 = new Question("Non existing, Easy: A is correct",
-                "A", "B", "C", 1, 4);
+        Question q5 = new Question("First Regulatory affairs question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.REG_AFFAIRS);
         insertQuestion(q5);
-        Question q6 = new Question("Non existing, Medium: B is correct",
-                "A", "B", "C", 2, 5);
+        Question q6 = new Question("Second Regulatory affairs question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.REG_AFFAIRS);
         insertQuestion(q6);
     }
 
@@ -132,6 +132,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_CATEGORY_ID, question.getCategoryID());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
+
     public List<Category> getAllCategories() {
         List<Category> categoryList = new ArrayList<>();
         db = getReadableDatabase();
@@ -148,10 +149,20 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         return categoryList;
     }
 
-    public ArrayList<Question> getAllQuestions() {
+    public ArrayList<Question> getAllQuestions(int categoryID) {
         ArrayList<Question> questionList = new ArrayList<>();
         db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
+        String selection = QuestionsTable.COLUMN_CATEGORY_ID + " = ? ";
+        String[] selectionArgs = new String[]{String.valueOf(categoryID)};
+        Cursor c = db.query(
+                QuestionsTable.TABLE_NAME,
+                null,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
         if (c.moveToFirst()) {
             do {
                 Question question = new Question();

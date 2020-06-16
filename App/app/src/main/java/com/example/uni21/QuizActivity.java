@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.View;
@@ -30,6 +31,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView textViewScore;
     private TextView textViewQuestionCount;
     private TextView textViewCategory;
+    private TextView textViewDifficulty;
     private TextView textViewCountDown;
     private RadioGroup rbGroup;
     private RadioButton rb1;
@@ -47,7 +49,6 @@ public class QuizActivity extends AppCompatActivity {
     private int score;
     private boolean answered;
     private long backPressedTime;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,13 +71,13 @@ public class QuizActivity extends AppCompatActivity {
         textViewCategory.setText("Category: " + categoryName);
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
-            questionList = dbHelper.getQuestions(categoryID);
+            questionList = dbHelper.getAllQuestions(categoryID);
+            //need another list with questions under the chosen category
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
             showNextQuestion();
         } else {
             questionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
-            assert questionList != null;
             questionCountTotal = questionList.size();
             questionCounter = savedInstanceState.getInt(KEY_QUESTION_COUNT);
             currentQuestion = questionList.get(questionCounter - 1);
@@ -96,16 +97,14 @@ public class QuizActivity extends AppCompatActivity {
                 if (!answered) {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
                         checkAnswer();
+                        showNextQuestion();
                     } else {
                         Toast.makeText(QuizActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    showNextQuestion();
                 }
             }
         });
     }
-
     private void showNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
@@ -153,7 +152,6 @@ public class QuizActivity extends AppCompatActivity {
             textViewCountDown.setTextColor(textColorDefaultCd);
         }
     }
-
     private void checkAnswer() {
         answered = true;
         countDownTimer.cancel();
@@ -165,7 +163,6 @@ public class QuizActivity extends AppCompatActivity {
         }
         showSolution();
     }
-
     private void showSolution() {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
