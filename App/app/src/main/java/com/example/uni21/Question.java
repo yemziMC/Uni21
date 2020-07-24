@@ -9,6 +9,7 @@ public class Question implements Parcelable {
     private String option3;
     private int answerNr;
     private int categoryID;
+    boolean isAnswerCorrect = false;
     public Question() {
     }
     public Question(String question, String option1, String option2, String option3,
@@ -28,6 +29,13 @@ public class Question implements Parcelable {
         option3 = in.readString();
         answerNr = in.readInt();
         categoryID = in.readInt();
+    }
+
+    public void setAnsweredCorrectly() {   // you use this method to set the answer to correct
+        isAnswerCorrect = true;
+    }
+    public boolean isAnsweredCorrectly() {   // you will use this method to only get correct answers
+        return isAnswerCorrect;
     }
     @Override
     public void writeToParcel(Parcel dest, int flags) {

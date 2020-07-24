@@ -14,14 +14,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 
 public class StartingScreenActivity extends AppCompatActivity {
-    private static final int REQUEST_CODE_QUIZ = 1;
+    public static final int REQUEST_CODE_QUIZ = 1;
     public static final String EXTRA_CATEGORY_ID = "extraCategoryID";
     public static final String EXTRA_CATEGORY_NAME = "extraCategoryName";
+    public static final String EXTRA_SCORE = "extraScore";
+
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String KEY_HIGHSCORE = "keyHighscore";
 
-    private TextView textViewHighscore;
+    public TextView textViewHighscore;
 
     //Values used to determine if any of the 4 buttons has been pressed
     public boolean clickedCorpFinance = false;
@@ -30,6 +32,8 @@ public class StartingScreenActivity extends AppCompatActivity {
     public boolean clickedCorpStrategy = false;
     public int selectedCategoryID;
 
+    public int questions_amount;
+    public int score;
     private int highscore;
 
     @Override
@@ -40,6 +44,11 @@ public class StartingScreenActivity extends AppCompatActivity {
         textViewHighscore = findViewById(R.id.text_view_highscore);
 
         loadHighscore();
+        Intent intent = getIntent();
+        score = intent.getIntExtra(resultActivity.EXTRA_SCORE, 0);
+        if (score > highscore) {
+            updateHighscore(score);
+        }
 
         Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
         buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +137,7 @@ public class StartingScreenActivity extends AppCompatActivity {
     }
 
     //Starts the quiz
-    //It takes values of the category and difficulty
+    //It takes values of the category
     private void startQuiz() {
         //int selectedCategoryName = 1;
         QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
@@ -144,24 +153,12 @@ public class StartingScreenActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE_QUIZ);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CODE_QUIZ) {
-            if (resultCode == RESULT_OK) {
-                int score = data.getIntExtra(QuizActivity.EXTRA_SCORE, 0);
-                if (score > highscore) {
-                    updateHighscore(score);
-                }
-            }
-        }
-    }
-
-    private void loadHighscore() {
+    public void loadHighscore() {
+        Intent intent = getIntent();
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        questions_amount = intent.getIntExtra(QuizActivity.QUESTION_AMOUNT, 0);
         highscore = prefs.getInt(KEY_HIGHSCORE, 0);
-        textViewHighscore.setText("Highscore: " + highscore);
+        textViewHighscore.setText("Highscore: " + highscore + "/" + questions_amount);
     }
 
     private void updateHighscore(int highscoreNew) {
