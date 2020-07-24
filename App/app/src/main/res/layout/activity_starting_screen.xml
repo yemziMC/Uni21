@@ -153,6 +153,7 @@
 
             <TextView
                 android:id="@+id/text_view_highscore"
+                android:background="@drawable/progressbar_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@id/button_start_quiz"

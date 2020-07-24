@@ -103,12 +103,30 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q4 = new Question("Fourth Corporate Finance question",
                 "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.CORP_FIN);
         insertQuestion(q4);
-        Question q5 = new Question("First Regulatory affairs question",
-                "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.REG_AFFAIRS);
+        Question q5 = new Question("Fifth Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.CORP_FIN);
         insertQuestion(q5);
-        Question q6 = new Question("Second Regulatory affairs question",
-                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.REG_AFFAIRS);
+        Question q6 = new Question("Sixth Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 3, Category.CORP_FIN);
         insertQuestion(q6);
+        Question q7 = new Question("Seventh Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.CORP_FIN);
+        insertQuestion(q7);
+        Question q8 = new Question("Eight Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.CORP_FIN);
+        insertQuestion(q8);
+        Question q9 = new Question("Ninth Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 3, Category.CORP_FIN);
+        insertQuestion(q9);
+        Question q10 = new Question("Tenth Corporate Finance question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.CORP_FIN);
+        insertQuestion(q10);
+        Question q11 = new Question("First Regulatory affairs question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 1, Category.REG_AFFAIRS);
+        insertQuestion(q11);
+        Question q12 = new Question("Second Regulatory affairs question",
+                "A | Some answer", "B | Some answer", "C | Some answer", 2, Category.REG_AFFAIRS);
+        insertQuestion(q12);
     }
 
     public void addQuestion(Question question) {
