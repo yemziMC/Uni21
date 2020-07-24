@@ -43,5 +43,14 @@
     <string name="question_text">Here will be the question text\nHere will be the question text\nHere will be the question text</string>
     <string name="score_0">Score: 0</string>
     <string name="question_1_x">Question: 1/x</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 </resources>
