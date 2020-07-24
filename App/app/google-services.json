@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1014024302189",
+    "firebase_url": "https://uni21-9dbbb.firebaseio.com",
+    "project_id": "uni21-9dbbb",
+    "storage_bucket": "uni21-9dbbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014024302189:android:812bcc879ad0bf28eb9964",
+        "android_client_info": {
+          "package_name": "com.example.uni21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014024302189-pekp8alj9i96t9og0hlovlbk0271dhus.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.uni21",
+            "certificate_hash": "93a28cff35ab7bde41c00595b8ca7d8267541e4c"
+          }
+        },
+        {
+          "client_id": "1014024302189-e0pt35empesoqdlunblb5cbh5nppbb08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY6Um6m1VjuNsgTdSeSt_19yz5HG6mT4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014024302189-e0pt35empesoqdlunblb5cbh5nppbb08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
